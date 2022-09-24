@@ -1,0 +1,32 @@
+emanus@gmail.com
+
+1.Γεγονοτα
+
+parent (petros,maria).
+parent (maria,alex).
+apostasi(thessalonik,serres,95).
+parent (petros,akis).
+male(petros).
+female(maria).
+
+
+2.Questions
+
+?-parent(petros,maria)
+	true
+?-parent(X,alex).
+	x=maria
+?-parent(petros,X).
+	x=maria(;)
+	x=akis(;)
+	false
+
+3.Kanones
+
+grandfather(X,Y):-
+    parent(X,Z),
+    parent(Z,Y),
+    male(X).
+
+?-grandfather(petros,X).
+?-grandfather(X,alex).
